@@ -1,0 +1,66 @@
+API Documentation
+=================
+
+The SPARKS Forge allows integration with external systems via a simple REST interface.
+
+Authentication
+--------------
+
+All API requests must include your API Key in the HTTP header:
+
+`X-API-KEY: your_api_key`
+
+You can find API keys in the "Guardians" section of the Citadel.
+
+Endpoint: Send Email (V1)
+--------------------------
+
+To add an email to the forge's queue, send a POST request.
+
+* **URL**: `http://your-domain.com/api/v1/send`
+* **Method**: `POST`
+* **Format**: `application/json`
+
+**Body Parameters:**
+
+=======  ========  ========  ==================================================
+Field    Type      Required  Description
+=======  ========  ========  ==================================================
+to       string    Yes       Email of the recipient.
+name     string    No        Name of the recipient.
+subject  string    Yes       Subject of the message.
+body     string    Yes       HTML or text content of the message.
+priority int       No        Priority (1: High, 5: Medium, 9: Low). Default: 5
+=======  ========  ========  ==================================================
+
+**Example Request:**
+
+.. code-block:: json
+
+   {
+     "to": "recipient@example.com",
+     "name": "Marco Spinelli",
+     "subject": "Welcome to the Forge",
+     "body": "<h1>Hello Marco!</h1><p>Your spark is ready.</p>",
+     "priority": 1
+   }
+
+**Example Response (Success):**
+
+.. code-block:: json
+
+   {
+     "success": true,
+     "message": "Email added to queue",
+     "id": 1234
+   }
+
+Response Considerations
+-----------------------
+
+* **200 OK**: If the message was successfully added to the queue.
+* **401 Unauthorized**: If the API key is missing or incorrect.
+* **400 Bad Request**: If mandatory fields are missing or data is invalid.
+
+.. note::
+   The actual sending of emails depends on the execution of the Worker's Cron Job. The API is limited to adding the message to the internal queue (The Hearth).

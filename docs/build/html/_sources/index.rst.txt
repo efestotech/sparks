@@ -1,0 +1,38 @@
+Benvenuto nella Documentazione di SPARKS!
+========================================
+
+.. image:: https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
+   :alt: La Fucina di Efesto
+   :align: center
+
+**SPARKS** (The Forge of Hephaestus) è un potente motore divino per la gestione delle code email, 
+progettato per offrire affidabilità, velocità e rotazione intelligente dei server SMTP. 
+
+In questa documentazione troverai tutto il necessario per configurare la tua fucina e dominare il fuoco dei messaggi.
+
+Contenuti
+---------
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Guida Utente:
+
+   requirements
+   installation
+   features
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Sviluppo & API:
+
+   api
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+.. footer::
+   Documentazione creata da Efesto Tech di Marco Spinelli.

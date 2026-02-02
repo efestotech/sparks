@@ -1,0 +1,61 @@
+Installazione e Configurazione
+==============================
+
+Segui questi passi per erigere la tua Fucina SPARKS.
+
+1. Caricamento dei File
+-----------------------
+
+Copia tutti i file della cartella del progetto nella directory principale del tuo web server (es. `public_html`, `www`, o una sottocartella dedicata).
+
+2. Configurazione dell'Ambiente (.env)
+--------------------------------------
+
+Rinomina o crea un file denominato `.env` nella radice del progetto. Configura i seguenti parametri:
+
+.. code-block:: ini
+
+   # Ambiente (development/production)
+   CI_ENVIRONMENT = production
+
+   # URL Base
+   app.baseURL = 'http://tuo-dominio.com/'
+
+   # Configurazione Database
+   database.default.hostname = localhost
+   database.default.database = sparks
+   database.default.username = mastro_fabbro
+   database.default.password = sigillo_segreto
+   database.default.DBDriver = MySQLi
+
+   # Chiave del Worker
+   worker.secret_key = UnaChiaveMoltoLungaESicura
+
+3. Preparazione del Database
+----------------------------
+
+Importa lo schema SQL fornito (solitamente tramite le migration di CodeIgniter o file `.sql` incluso) nel tuo database MySQL.
+
+Assicurati che l'utente del database abbia i permessi di `SELECT`, `INSERT`, `UPDATE`, `DELETE` sulle tabelle.
+
+4. Configurazione del Cron Job (Il Mantice Automatico)
+------------------------------------------------------
+
+Per far sì che le email vengano inviate automaticamente, devi impostare un Cron Job sul tuo server che richiami il file `worker.php` periodicamente.
+
+Esempio (Esecuzione ogni minuto):
+
+.. code-block:: bash
+
+   * * * * * curl -s "http://tuo-dominio.com/worker.php?key=LaTuaChiaveSegreta" > /dev/null 2>&1
+
+Alternativamente, puoi azionare il mantice manualmente dalla Dashboard Admin.
+
+5. Accesso alla Cittadella
+--------------------------
+
+Una volta completata la configurazione, accedi all'area amministrativa all'indirizzo:
+
+`http://tuo-dominio.com/admin`
+
+Le credenziali predefinite devono essere impostate durante la prima installazione o tramite il setup wizard (se disponibile).

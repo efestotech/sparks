@@ -1,0 +1,100 @@
+name: Create Deploy-Ready Package
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, xml, intl, gd
+          tools: composer:v2
+
+      - name: Install PHP Dependencies
+        run: composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+
+      - name: Set up Python for Sphinx
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Documentation Tools
+        run: |
+          pip install sphinx sphinx-rtd-theme sphinx-intl
+
+      - name: Build Multilingual Documentation
+        run: |
+          mkdir -p docs/build/en docs/build/it
+          sphinx-build -b html docs/source docs/build/en
+          sphinx-build -b html -D language=it docs/source docs/build/it
+
+      - name: Prepare Workspace for Packaging
+        run: |
+          # Create a clean release directory
+          mkdir -p release_staging
+          
+          # Move everything to staging but exclude dev junk
+          rsync -av --progress . release_staging --exclude .git --exclude .github --exclude tests --exclude docs --exclude phpunit.xml.dist --exclude .gitignore --exclude .env --exclude composer.json --exclude composer.lock --exclude LICENSE --exclude README.md --exclude DEPLOY_SHARED.md
+          
+          # Copy built documentation
+          mkdir -p release_staging/docs/en
+          mkdir -p release_staging/docs/it
+          cp -r docs/build/en/* release_staging/docs/en/
+          cp -r docs/build/it/* release_staging/docs/it/
+
+          # Ensure writable folders exist but are empty
+          mkdir -p release_staging/writable/cache
+          mkdir -p release_staging/writable/logs
+          mkdir -p release_staging/writable/session
+          mkdir -p release_staging/writable/uploads
+          mkdir -p release_staging/writable/debugbar
+          touch release_staging/writable/cache/index.html
+          touch release_staging/writable/logs/index.html
+          touch release_staging/writable/session/index.html
+          touch release_staging/writable/uploads/index.html
+          touch release_staging/writable/debugbar/index.html
+          
+          # Re-add essential root files for deployment instructions
+          cp DEPLOY_SHARED.md release_staging/
+          cp .env.example release_staging/
+
+      - name: Package ZIP
+        run: |
+          cd release_staging
+          # If it's a tag, name it with the version
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            ZIP_NAME="sparks-${{ github.ref_name }}-deploy.zip"
+          else
+            ZIP_NAME="sparks-latest-deploy.zip"
+          fi
+          zip -r ../$ZIP_NAME .
+          echo "ZIP_FILE_NAME=$ZIP_NAME" >> $GITHUB_ENV
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ZIP_FILE_NAME }}
+          path: ${{ env.ZIP_FILE_NAME }}
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ env.ZIP_FILE_NAME }}
+          body: "Automated deploy-ready package for version ${{ github.ref_name }}."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
