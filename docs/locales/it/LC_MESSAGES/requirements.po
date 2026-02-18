@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Efesto Tech di Marco Spinelli
+# This file is distributed under the same license as the Sparks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sparks 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-02 12:09+0100\n"
+"PO-Revision-Date: 2026-02-02 12:10+0100\n"
+"Last-Translator: Efesto Tech\n"
+"Language: it\n"
+"Language-Team: it <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/requirements.rst:2
+msgid "System Requirements"
+msgstr "Requisiti di Sistema"
+
+#: ../../source/requirements.rst:4
+msgid ""
+"To run the Forge of SPARKS, your environment must meet the following "
+"divine criteria:"
+msgstr "Per far funzionare la Fucina di SPARKS, il tuo ambiente deve soddisfare i seguenti criteri divini:"
+
+#: ../../source/requirements.rst:7
+msgid "Server Environment"
+msgstr "Ambiente Server"
+
+#: ../../source/requirements.rst:9
+msgid "**PHP**: Version 8.1 or higher."
+msgstr "**PHP**: Versione 8.1 o superiore."
+
+#: ../../source/requirements.rst:10
+msgid "**Database**: MySQL 5.7+ or MariaDB 10.3+."
+msgstr "**Database**: MySQL 5.7+ o MariaDB 10.3+."
+
+#: ../../source/requirements.rst:11
+msgid "**Web Server**: Apache with `mod_rewrite` enabled or Nginx."
+msgstr "**Web Server**: Apache con `mod_rewrite` abilitato o Nginx."
+
+#: ../../source/requirements.rst:12
+msgid ""
+"**Composer**: For managing dependencies (optional for manual "
+"installation)."
+msgstr "**Composer**: Per la gestione delle dipendenze (opzionale per l'installazione manuale)."
+
+#: ../../source/requirements.rst:15
+msgid "Required PHP Extensions"
+msgstr "Estensioni PHP Richieste"
+
+#: ../../source/requirements.rst:17
+msgid ""
+"The system requires the following extensions to be enabled in your "
+"`php.ini`:"
+msgstr "Il sistema richiede le seguenti estensioni abilitate nel tuo `php.ini`:"
+
+#: ../../source/requirements.rst:19
+msgid "`intl`: For localization and multi-language messages."
+msgstr "`intl`: Per la localizzazione e i messaggi multilingua."
+
+#: ../../source/requirements.rst:20
+msgid "`mbstring`: For safe multibyte text handling."
+msgstr "`mbstring`: Per la gestione sicura del testo multibyte."
+
+#: ../../source/requirements.rst:21
+msgid "`mysqli`: For database communication."
+msgstr "`mysqli`: Per la comunicazione con il database."
+
+#: ../../source/requirements.rst:22
+msgid "`curl`: For external notifications (if used)."
+msgstr "`curl`: Per le notifiche esterne (se utilizzate)."
+
+#: ../../source/requirements.rst:23
+msgid "`openssl`: For encrypting Secret Sigils (SMTP passwords)."
+msgstr "`openssl`: Per la crittografia dei Sigilli Segreti (SMTP password)."
+
+#: ../../source/requirements.rst:26
+msgid "Resource Limits"
+msgstr "Limiti Risorse"
+
+#: ../../source/requirements.rst:28
+msgid "**Memory**: At least 128MB of RAM dedicated to PHP."
+msgstr "**Memoria**: Almeno 128MB di RAM dedicati a PHP."
+
+#: ../../source/requirements.rst:29
+msgid ""
+"**Permissions**: The `writable/` folder must be writable by the web "
+"server."
+msgstr "**Permessi**: La cartella `writable/` deve essere scrivibile dal web server."

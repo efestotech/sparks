@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Efesto Tech di Marco Spinelli
+# This file is distributed under the same license as the Sparks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sparks 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-02 12:09+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/api.rst:2
+msgid "API Documentation"
+msgstr ""
+
+#: ../../source/api.rst:4
+msgid "The SPARKS Forge allows integration with external systems via a simple REST interface."
+msgstr ""
+
+#: ../../source/api.rst:7
+msgid "Authentication"
+msgstr ""
+
+#: ../../source/api.rst:9
+msgid "All API requests must include your API Key in the HTTP header:"
+msgstr ""
+
+#: ../../source/api.rst:11
+msgid "`X-API-KEY: your_api_key`"
+msgstr ""
+
+#: ../../source/api.rst:13
+msgid "You can find API keys in the \"Guardians\" section of the Citadel."
+msgstr ""
+
+#: ../../source/api.rst:16
+msgid "Endpoint: Send Email (V1)"
+msgstr ""
+
+#: ../../source/api.rst:18
+msgid "To add an email to the forge's queue, send a POST request."
+msgstr ""
+
+#: ../../source/api.rst:20
+msgid "**URL**: `http://your-domain.com/api/v1/send`"
+msgstr ""
+
+#: ../../source/api.rst:21
+msgid "**Method**: `POST`"
+msgstr ""
+
+#: ../../source/api.rst:22
+msgid "**Format**: `application/json`"
+msgstr ""
+
+#: ../../source/api.rst:24
+msgid "**Body Parameters:**"
+msgstr ""
+
+#: ../../source/api.rst:36
+msgid "**Example Request:**"
+msgstr ""
+
+#: ../../source/api.rst:48
+msgid "**Example Response (Success):**"
+msgstr ""
+
+#: ../../source/api.rst:59
+msgid "Response Considerations"
+msgstr ""
+
+#: ../../source/api.rst:61
+msgid "**200 OK**: If the message was successfully added to the queue."
+msgstr ""
+
+#: ../../source/api.rst:62
+msgid "**401 Unauthorized**: If the API key is missing or incorrect."
+msgstr ""
+
+#: ../../source/api.rst:63
+msgid "**400 Bad Request**: If mandatory fields are missing or data is invalid."
+msgstr ""
+
+#: ../../source/api.rst:66
+msgid "The actual sending of emails depends on the execution of the Worker's Cron Job. The API is limited to adding the message to the internal queue (The Hearth)."
+msgstr ""

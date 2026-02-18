@@ -1,0 +1,181 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation and Configuration &mdash; Sparks 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Features of the Forge" href="features.html" />
+    <link rel="prev" title="System Requirements" href="requirements.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #24292e" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Sparks
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">System Requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation and Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#file-upload">1. File Upload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-setup-wizard-recommended">2. The Setup Wizard (Recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manual-configuration-alternative">3. Manual Configuration (Alternative)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cron-job-configuration-the-automatic-bellows">4. Cron Job Configuration (The Automatic Bellows)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-the-citadel">5. Accessing the Citadel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features of the Forge</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development &amp; API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #24292e" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sparks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation and Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation-and-configuration">
+<h1>Installation and Configuration<a class="headerlink" href="#installation-and-configuration" title="Link to this heading"></a></h1>
+<p>Follow these steps to erect your SPARKS Forge.</p>
+<section id="file-upload">
+<h2>1. File Upload<a class="headerlink" href="#file-upload" title="Link to this heading"></a></h2>
+<p>Copy all the files from the project folder to the main directory of your web server (e.g., <cite>public_html</cite>, <cite>www</cite>, or a dedicated subfolder).</p>
+</section>
+<section id="the-setup-wizard-recommended">
+<h2>2. The Setup Wizard (Recommended)<a class="headerlink" href="#the-setup-wizard-recommended" title="Link to this heading"></a></h2>
+<p>SPARKS comes with an intuitive setup wizard to automate the configuration.</p>
+<ol class="arabic simple">
+<li><p>Navigate to: <cite>http://your-domain.com/setup.php</cite></p></li>
+<li><p><strong>The Citadel Boundary</strong>: Enter your Base URL (e.g., <cite>http://sparks.it/</cite>).</p></li>
+<li><p><strong>The Vault of Hephaestus</strong>: Provide your MySQL/MariaDB database credentials (Hostname, Name, Username, Password).</p></li>
+<li><p><strong>The Master Blacksmith</strong>: Create your first Guardian (Admin) account.</p></li>
+<li><p><strong>Forge Protection</strong>: A Worker Sigil (Secret Key) is automatically generated. Keep this safe!</p></li>
+<li><p>Click <strong>Strike the Anvil &amp; Begin</strong>.</p></li>
+</ol>
+<p>The system will:
+* Test the database connection.
+* Generate a secure encryption key for SMTP passwords.
+* Create the <cite>.env</cite> file automatically.
+* Initialize the database schema and default settings.
+* <strong>Self-destruct</strong>: The <cite>setup.php</cite> script is automatically deleted for security once finished.</p>
+</section>
+<section id="manual-configuration-alternative">
+<h2>3. Manual Configuration (Alternative)<a class="headerlink" href="#manual-configuration-alternative" title="Link to this heading"></a></h2>
+<p>If you prefer manual setup, rename the <cite>.env.example</cite> file to <cite>.env</cite> in the project root and configure the following parameters:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># Environment (development/production)</span>
+<span class="na">CI_ENVIRONMENT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">production</span>
+
+<span class="c1"># Base URL</span>
+<span class="na">app.baseURL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;http://your-domain.com/&#39;</span>
+
+<span class="c1"># Database Configuration</span>
+<span class="na">database.default.hostname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">localhost</span>
+<span class="na">database.default.database</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sparks</span>
+<span class="na">database.default.username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">master_blacksmith</span>
+<span class="na">database.default.password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">secret_sigil</span>
+<span class="na">database.default.DBDriver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">MySQLi</span>
+
+<span class="c1"># Worker Key</span>
+<span class="na">worker.secret_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">AVeryLongAndSecureKey</span>
+</pre></div>
+</div>
+</section>
+<section id="cron-job-configuration-the-automatic-bellows">
+<h2>4. Cron Job Configuration (The Automatic Bellows)<a class="headerlink" href="#cron-job-configuration-the-automatic-bellows" title="Link to this heading"></a></h2>
+<p>To ensure emails are sent automatically, you must set up a Cron Job on your server that calls the <cite>worker.php</cite> file periodically.</p>
+<p>Example (Execution every minute):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://your-domain.com/worker.php?key=YourSecretKey&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Alternatively, you can ignite the bellows manually from the Admin Dashboard.</p>
+</section>
+<section id="accessing-the-citadel">
+<h2>5. Accessing the Citadel<a class="headerlink" href="#accessing-the-citadel" title="Link to this heading"></a></h2>
+<p>After the setup is complete, access the administrative area at:</p>
+<p><cite>http://your-domain.com/admin</cite></p>
+<p>The default credentials are those you provided during the Setup Wizard.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="requirements.html" class="btn btn-neutral float-left" title="System Requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="features.html" class="btn btn-neutral float-right" title="Features of the Forge" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Efesto Tech di Marco Spinelli.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

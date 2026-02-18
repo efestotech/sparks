@@ -1,0 +1,29 @@
+Requisiti di Sistema
+=====================
+
+Per far funzionare la Fucina di SPARKS, il tuo ambiente deve soddisfare i seguenti criteri divini:
+
+Ambiente Server
+---------------
+
+* **PHP**: Versione 8.1 o superiore.
+* **Database**: MySQL 5.7+ o MariaDB 10.3+.
+* **Web Server**: Apache con `mod_rewrite` abilitato o Nginx.
+* **Composer**: Per la gestione delle dipendenze (opzionale per l'installazione manuale).
+
+Estensioni PHP Richieste
+------------------------
+
+Il sistema richiede le seguenti estensioni abilitate nel tuo `php.ini`:
+
+* `intl`: Per la localizzazione e i messaggi multilingua.
+* `mbstring`: Per la gestione sicura del testo multibyte.
+* `mysqli`: Per la comunicazione con il database.
+* `curl`: Per le notifiche esterne (se utilizzate).
+* `openssl`: Per la crittografia dei Sigilli Segreti.
+
+Limiti Risorse
+--------------
+
+* **Memoria**: Almeno 128MB di RAM dedicati a PHP.
+* **Permessi**: La cartella `writable/` deve essere scrivibile dal web server.

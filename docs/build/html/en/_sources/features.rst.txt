@@ -1,0 +1,35 @@
+Features of the Forge
+=====================
+
+SPARKS is not a simple sending system; it is a work of mythological engineering.
+
+Multiple SMTP Management (The Anvils)
+-------------------------------------
+
+* **Intelligent Rotation**: The system rotates through different SMTP servers to maximize delivery and respect limits.
+* **Hourly and Daily Limits**: Each "Anvil" has its own configurable limits to avoid bans and overloads.
+* **Connection Pooling**: The system keeps connections active to speed up the sending of large quantities of sparks.
+* **Personal Sender Identity**: Each server can have its own sender name and email.
+
+Sending Queue (The Hearth)
+--------------------------
+
+* **Priority Management**: Sends critical messages before standard notifications.
+* **Automatic Retries**: If a sent fails, the system retries according to the configuration (default: 3 retries).
+* **Detailed Logging**: Every event is recorded with the original SMTP error codes for rapid debugging.
+
+Administrative Interface (The Citadel)
+---------------------------------------
+
+* **Premium Design**: An interface inspired by Greek mythology, elegant and modern.
+* **Native Multilingual**: Full support for Italian and English, with automatic language detection.
+* **Real-time Dashboard**: View the status of embers and anvils at a glance.
+* **Guardian Management**: Manage different administrative accounts with individual API keys.
+
+Aegis Security
+--------------
+
+* **Password Encryption**: SMTP passwords are encrypted in the database using AES-256.
+* **Worker Security**: Worker execution is protected by a configurable Secret Sigil (Secret Key).
+* **API Isolation**: External access is only allowed through regenerable API keys.
+迫于

@@ -1,0 +1,34 @@
+Caratteristiche della Fucina
+============================
+
+SPARKS non è un semplice sistema di invio, è un'opera d'ingegneria mitologica.
+
+Gestione SMTP Multipla (Le Incudini)
+------------------------------------
+
+* **Rotazione Intelligente**: Il sistema ruota tra diversi server SMTP per massimizzare la consegna e rispettare i limiti.
+* **Limiti Orari e Giornalieri**: Ogni "Incudine" ha i propri limiti configurabili per evitare ban e sovraccarichi.
+* **Pooling delle Connessioni**: Il sistema mantiene le connessioni attive per velocizzare l'invio di grandi quantità di scintille.
+* **Identità del Mittente Personale**: Ogni server può avere il proprio nome e email del mittente.
+
+Coda di Invio (Il Focolare)
+---------------------------
+
+* **Gestione Priorità**: Invia i messaggi critici prima delle notifiche standard.
+* **Tentativi Automatici**: Se un'invio fallisce, il sistema riprova secondo la configurazione (default: 3 tentativi).
+* **Logging Dettagliato**: Ogni evento viene registrato con i codici di errore SMTP originali per un debug rapido.
+
+Interfaccia Amministrativa (La Cittadella)
+------------------------------------------
+
+* **Design Premium**: Un'interfaccia ispirata alla mitologia greca, elegante e moderna.
+* **Multilingua Nativo**: Supporto completo per Italiano e Inglese, con rilevamento automatico della lingua.
+* **Dashboard Real-time**: Visualizza lo stato delle braci e delle incudini a colpo d'occhio.
+* **Gestione Guardiani**: Gestisci diversi account amministrativi con chiavi API individuali.
+
+Sicurezza dell'Egida
+--------------------
+
+* **Crittografia Password**: Le password SMTP sono criptate nel database utilizzando AES-256.
+* **Sicurezza Worker**: L'esecuzione del worker è protetta da un Sigillo Segreto (Secret Key) configurabile.
+* **Isolamento API**: L'accesso esterno è permesso solo tramite chiavi API rigenerabili.

@@ -1,0 +1,67 @@
+Documentazione API
+==================
+
+La Fucina di SPARKS permette l'integrazione con sistemi esterni tramite una semplice interfaccia REST.
+
+Autenticazione
+--------------
+
+Tutte le richieste API devono includere la tua Chiave API (API Key) nell'header HTTP:
+
+`X-API-KEY: la_tua_chiave_api`
+
+Puoi trovare le chiavi API nella sezione "Guardiani" della Cittadella.
+
+Endpoint: Invio Email (V1)
+--------------------------
+
+Per aggiungere un'email alla coda della fucina, invia una richiesta POST.
+
+* **URL**: `http://tuo-dominio.com/api/v1/send`
+* **Metodo**: `POST`
+* **Formato**: `application/json`
+
+**Parametri del Body:**
+
+=======  ========  ========  ==================================================
+Campo    Tipo      Richiesto Descrizione
+=======  ========  ========  ==================================================
+to       string    Sì        Email del destinatario.
+name     string    No        Nome del destinatario.
+subject  string    Sì        Oggetto del messaggio.
+body     string    Sì        Contenuto HTML o testo del messaggio.
+priority int       No        Priorità (1: Alta, 5: Media, 9: Bassa). Default: 5
+=======  ========  ========  ==================================================
+
+**Esempio di Richiesta:**
+
+.. code-block:: json
+
+   {
+     "to": "destinatario@esempio.it",
+     "name": "Marco Spinelli",
+     "subject": "Benvenuto nella Fucina",
+     "body": "<h1>Ciao Marco!</h1><p>La tua scintilla è pronta.</p>",
+     "priority": 1
+   }
+
+**Esempio di Risposta (Successo):**
+
+.. code-block:: json
+
+   {
+     "success": true,
+     "message": "Email added to queue",
+     "id": 1234
+   }
+
+Considerazioni sulle Risposte
+-----------------------------
+
+* **200 OK**: Se il messaggio è stato aggiunto correttamente alla coda.
+* **401 Unauthorized**: Se la chiave API è mancante o non corretta.
+* **400 Bad Request**: Se mancano i campi obbligatori o i dati non sono validi.
+
+.. note::
+   L'invio effettivo delle email dipende dall'esecuzione del Cron Job del Worker. L'API si limita ad aggiungere il messaggio alla coda interna (Il Focolare).
+迫于

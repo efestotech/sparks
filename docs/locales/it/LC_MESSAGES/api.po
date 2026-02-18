@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Efesto Tech di Marco Spinelli
+# This file is distributed under the same license as the Sparks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sparks 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-02 12:09+0100\n"
+"PO-Revision-Date: 2026-02-02 12:16+0100\n"
+"Last-Translator: Efesto Tech\n"
+"Language: it\n"
+"Language-Team: it <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/api.rst:2
+msgid "API Documentation"
+msgstr "Documentazione API"
+
+#: ../../source/api.rst:4
+msgid ""
+"The SPARKS Forge allows integration with external systems via a simple "
+"REST interface."
+msgstr "La Fucina di SPARKS permette l'integrazione con sistemi esterni tramite una semplice interfaccia REST."
+
+#: ../../source/api.rst:7
+msgid "Authentication"
+msgstr "Autenticazione"
+
+#: ../../source/api.rst:9
+msgid "All API requests must include your API Key in the HTTP header:"
+msgstr "Tutte le richieste API devono includere la tua Chiave API (API Key) nell'header HTTP:"
+
+#: ../../source/api.rst:11
+msgid "`X-API-KEY: your_api_key`"
+msgstr "`X-API-KEY: la_tua_chiave_api`"
+
+#: ../../source/api.rst:13
+msgid "You can find API keys in the \"Guardians\" section of the Citadel."
+msgstr "Puoi trovare le chiavi API nella sezione \"Guardiani\" della Cittadella."
+
+#: ../../source/api.rst:16
+msgid "Endpoint: Send Email (V1)"
+msgstr "Endpoint: Invio Email (V1)"
+
+#: ../../source/api.rst:18
+msgid "To add an email to the forge's queue, send a POST request."
+msgstr "Per aggiungere un'email alla coda della fucina, invia una richiesta POST."
+
+#: ../../source/api.rst:20
+msgid "**URL**: `http://your-domain.com/api/v1/send`"
+msgstr "**URL**: `http://tuo-dominio.com/api/v1/send`"
+
+#: ../../source/api.rst:21
+msgid "**Method**: `POST`"
+msgstr "**Metodo**: `POST`"
+
+#: ../../source/api.rst:22
+msgid "**Format**: `application/json`"
+msgstr "**Formato**: `application/json`"
+
+#: ../../source/api.rst:24
+msgid ""
+"=======  ========  ========  =============================================================\n"
+"Field    Type      Required  Description\n"
+"=======  ========  ========  =============================================================\n"
+"to_email string    Yes       Email of the recipient.\n"
+"to_name  string    No        Name of the recipient.\n"
+"subject  string    Yes       Subject of the message.\n"
+"body_html string   Yes       HTML or text content of the message.\n"
+"priority int       No        Priority (1: High, 5: Medium, 9: Low). Default: 5\n"
+"scheduled_at string No       Optional. ISO Date (Y-m-d H:i:s) for future delivery.\n"
+"=======  ========  ========  ============================================================="
+msgstr ""
+"=======  ========  ========  =============================================================\n"
+"Campo    Tipo      Obblig.   Descrizione\n"
+"=======  ========  ========  =============================================================\n"
+"to_email string    Sì        Email del destinatario.\n"
+"to_name  string    No        Nome del destinatario.\n"
+"subject  string    Sì        Oggetto del messaggio.\n"
+"body_html string   Sì        Contenuto HTML o testo del messaggio.\n"
+"priority int       No        Priorità (1: Alta, 5: Media, 9: Bassa). Default: 5\n"
+"scheduled_at string No       Opzionale. Data ISO (Y-m-d H:i:s) per invio futuro.\n"
+"=======  ========  ========  ============================================================="
+
+#: ../../source/api.rst:36
+msgid "**Example Request:**"
+msgstr "**Esempio di Richiesta:**"
+
+#: ../../source/api.rst:38
+msgid ""
+".. code-block:: json\n"
+"\n"
+"   {\n"
+"     \"to_email\": \"recipient@example.com\",\n"
+"     \"to_name\": \"Marco Spinelli\",\n"
+"     \"subject\": \"Welcome to the Forge\",\n"
+"     \"body_html\": \"<h1>Hello Marco!</h1><p>Your spark is ready.</p>\",\n"
+"     \"priority\": 1,\n"
+"     \"scheduled_at\": \"2026-02-25 15:30:00\"\n"
+"   }"
+msgstr ""
+".. code-block:: json\n"
+"\n"
+"   {\n"
+"     \"to_email\": \"destinatario@esempio.com\",\n"
+"     \"to_name\": \"Marco Spinelli\",\n"
+"     \"subject\": \"Benvenuto nella Fucina\",\n"
+"     \"body_html\": \"<h1>Ciao Marco!</h1><p-Your spark is ready.</p>\",\n"
+"     \"priority\": 1,\n"
+"     \"scheduled_at\": \"2026-02-25 15:30:00\"\n"
+"   }"
+
+#: ../../source/api.rst:48
+msgid "**Example Response (Success):**"
+msgstr "**Esempio di Risposta (Successo):**"
+
+#: ../../source/api.rst:59
+msgid "Response Considerations"
+msgstr "Considerazioni sulle Risposte"
+
+#: ../../source/api.rst:61
+msgid "**200 OK**: If the message was successfully added to the queue."
+msgstr "**200 OK**: Se il messaggio è stato aggiunto correttamente alla coda."
+
+#: ../../source/api.rst:62
+msgid "**401 Unauthorized**: If the API key is missing or incorrect."
+msgstr "**401 Unauthorized**: Se la chiave API è mancante o non corretta."
+
+#: ../../source/api.rst:63
+msgid "**400 Bad Request**: If mandatory fields are missing or data is invalid."
+msgstr "**400 Bad Request**: Se mancano i campi obbligatori o i dati non sono validi."
+
+#: ../../source/api.rst:66
+msgid ""
+"The actual sending of emails depends on the execution of the Worker's "
+"Cron Job. The API is limited to adding the message to the internal queue "
+"(The Hearth)."
+msgstr "L'invio effettivo delle email dipende dall'esecuzione del Cron Job del Worker. L'API si limita ad aggiungere il messaggio alla coda interna (Il Focolare)."

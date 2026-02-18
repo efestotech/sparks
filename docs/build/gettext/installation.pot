@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Efesto Tech di Marco Spinelli
+# This file is distributed under the same license as the Sparks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sparks 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-02 12:09+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/installation.rst:2
+msgid "Installation and Configuration"
+msgstr ""
+
+#: ../../source/installation.rst:4
+msgid "Follow these steps to erect your SPARKS Forge."
+msgstr ""
+
+#: ../../source/installation.rst:7
+msgid "1. File Upload"
+msgstr ""
+
+#: ../../source/installation.rst:9
+msgid "Copy all the files from the project folder to the main directory of your web server (e.g., `public_html`, `www`, or a dedicated subfolder)."
+msgstr ""
+
+#: ../../source/installation.rst:12
+msgid "2. The Setup Wizard (Recommended)"
+msgstr ""
+
+#: ../../source/installation.rst:14
+msgid "SPARKS comes with an intuitive setup wizard to automate the configuration."
+msgstr ""
+
+#: ../../source/installation.rst:16
+msgid "Navigate to: `http://your-domain.com/setup.php`"
+msgstr ""
+
+#: ../../source/installation.rst:17
+msgid "**The Citadel Boundary**: Enter your Base URL (e.g., `http://sparks.it/`)."
+msgstr ""
+
+#: ../../source/installation.rst:18
+msgid "**The Vault of Hephaestus**: Provide your MySQL/MariaDB database credentials (Hostname, Name, Username, Password)."
+msgstr ""
+
+#: ../../source/installation.rst:19
+msgid "**The Master Blacksmith**: Create your first Guardian (Admin) account."
+msgstr ""
+
+#: ../../source/installation.rst:20
+msgid "**Forge Protection**: A Worker Sigil (Secret Key) is automatically generated. Keep this safe!"
+msgstr ""
+
+#: ../../source/installation.rst:21
+msgid "Click **Strike the Anvil & Begin**."
+msgstr ""
+
+#: ../../source/installation.rst:23
+msgid "The system will: * Test the database connection. * Generate a secure encryption key for SMTP passwords. * Create the `.env` file automatically. * Initialize the database schema and default settings. * **Self-destruct**: The `setup.php` script is automatically deleted for security once finished."
+msgstr ""
+
+#: ../../source/installation.rst:31
+msgid "3. Manual Configuration (Alternative)"
+msgstr ""
+
+#: ../../source/installation.rst:33
+msgid "If you prefer manual setup, rename the `.env.example` file to `.env` in the project root and configure the following parameters:"
+msgstr ""
+
+#: ../../source/installation.rst:54
+msgid "4. Cron Job Configuration (The Automatic Bellows)"
+msgstr ""
+
+#: ../../source/installation.rst:56
+msgid "To ensure emails are sent automatically, you must set up a Cron Job on your server that calls the `worker.php` file periodically."
+msgstr ""
+
+#: ../../source/installation.rst:58
+msgid "Example (Execution every minute):"
+msgstr ""
+
+#: ../../source/installation.rst:64
+msgid "Alternatively, you can ignite the bellows manually from the Admin Dashboard."
+msgstr ""
+
+#: ../../source/installation.rst:67
+msgid "5. Accessing the Citadel"
+msgstr ""
+
+#: ../../source/installation.rst:69
+msgid "After the setup is complete, access the administrative area at:"
+msgstr ""
+
+#: ../../source/installation.rst:71
+msgid "`http://your-domain.com/admin`"
+msgstr ""
+
+#: ../../source/installation.rst:73
+msgid "The default credentials are those you provided during the Setup Wizard."
+msgstr ""

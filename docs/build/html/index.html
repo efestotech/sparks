@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARKS Documentation | Select Language</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;700&display=swap">
+    <style>
+        :root {
+            --hephaestus-gold: #c5a021;
+            --stone: #24292e;
+            --marble: #fcfaf7;
+            --terracotta: #b3542d;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--stone);
+            color: var(--marble);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            text-align: center;
+            background: rgba(252, 250, 247, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 60px;
+            border: 2px solid var(--hephaestus-gold);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            letter-spacing: 10px;
+            margin-bottom: 10px;
+            color: var(--hephaestus-gold);
+        }
+        p {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            letter-spacing: 2px;
+        }
+        .links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        a {
+            text-decoration: none;
+            color: var(--stone);
+            background-color: var(--hephaestus-gold);
+            padding: 15px 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+        a:hover {
+            background-color: var(--terracotta);
+            color: white;
+            transform: translateY(-5px);
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SPARKS</h1>
+        <p>Forge of Hephaestus - Documentation</p>
+        <div class="links">
+            <a href="en/index.html">English</a>
+            <a href="it/index.html">Italiano</a>
+        </div>
+        <div class="footer">
+            Developed by Efesto Tech di Marco Spinelli
+        </div>
+    </div>
+</body>
+</html>

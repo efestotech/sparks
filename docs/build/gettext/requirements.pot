@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Efesto Tech di Marco Spinelli
+# This file is distributed under the same license as the Sparks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sparks 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-02 12:09+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/requirements.rst:2
+msgid "System Requirements"
+msgstr ""
+
+#: ../../source/requirements.rst:4
+msgid "To run the Forge of SPARKS, your environment must meet the following divine criteria:"
+msgstr ""
+
+#: ../../source/requirements.rst:7
+msgid "Server Environment"
+msgstr ""
+
+#: ../../source/requirements.rst:9
+msgid "**PHP**: Version 8.1 or higher."
+msgstr ""
+
+#: ../../source/requirements.rst:10
+msgid "**Database**: MySQL 5.7+ or MariaDB 10.3+."
+msgstr ""
+
+#: ../../source/requirements.rst:11
+msgid "**Web Server**: Apache with `mod_rewrite` enabled or Nginx."
+msgstr ""
+
+#: ../../source/requirements.rst:12
+msgid "**Composer**: For managing dependencies (optional for manual installation)."
+msgstr ""
+
+#: ../../source/requirements.rst:15
+msgid "Required PHP Extensions"
+msgstr ""
+
+#: ../../source/requirements.rst:17
+msgid "The system requires the following extensions to be enabled in your `php.ini`:"
+msgstr ""
+
+#: ../../source/requirements.rst:19
+msgid "`intl`: For localization and multi-language messages."
+msgstr ""
+
+#: ../../source/requirements.rst:20
+msgid "`mbstring`: For safe multibyte text handling."
+msgstr ""
+
+#: ../../source/requirements.rst:21
+msgid "`mysqli`: For database communication."
+msgstr ""
+
+#: ../../source/requirements.rst:22
+msgid "`curl`: For external notifications (if used)."
+msgstr ""
+
+#: ../../source/requirements.rst:23
+msgid "`openssl`: For encrypting Secret Sigils (SMTP passwords)."
+msgstr ""
+
+#: ../../source/requirements.rst:26
+msgid "Resource Limits"
+msgstr ""
+
+#: ../../source/requirements.rst:28
+msgid "**Memory**: At least 128MB of RAM dedicated to PHP."
+msgstr ""
+
+#: ../../source/requirements.rst:29
+msgid "**Permissions**: The `writable/` folder must be writable by the web server."
+msgstr ""
